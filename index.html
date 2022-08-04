@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body
+    class="flex justify-center items-center"
+    style="min-width: 100vw; min-height: 100vh"
+  >
+    <div
+      x-data="{ age: 11, name: 'abhi' }"
+      class="flex flex-col justify-center items-center"
+    >
+      <h1 class="text-4xl font-bold">
+        Happy <span x-text="age" x-ref="ageSpn" id="ageSpn"></span>th Birthday,
+        <span x-text="name" x-ref="naneSpn" id="nameSpn"></span>!
+      </h1>
+      <br />
+      <canvas id="c" width="800" height="600"></canvas>
+      <br />
+      <form class="flex gap-4 justify-center items-center">
+        <label for="name" class="block mb-2 text-sm font-medium text-gray-900"
+          >Name</label
+        >
+        <input
+          type="text"
+          id="name"
+          value="Abhi"
+          x-model="name"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        />
+        <label for="age" class="block mb-2 text-sm font-medium text-gray-900"
+          >Age</label
+        >
+        <input
+          type="number"
+          id="age"
+          value="11"
+          x-model="age"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        />
+      </form>
+      <br />
+      <button
+        type="button"
+        id="play-button"
+        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        x-bind="play-button"
+        @click="handleSpeech()"
+      >
+        Let a Robot sing the Happy Birthday Song!
+      </button>
+    </div>
+    <script>
+      //nameSpn ageSpn
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
